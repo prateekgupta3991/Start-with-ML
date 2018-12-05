@@ -4,3 +4,5 @@ labels = [0, 0, 1, 1] # updating to real valued functions [0-apple, 1-orange]
 print (features, labels)
 
 classifier = tree.DecisionTreeClassifier()
+clf = classifier.fit(features, labels)
+print (clf)
