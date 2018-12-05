@@ -5,4 +5,5 @@ print (features, labels)
 
 classifier = tree.DecisionTreeClassifier()
 clf = classifier.fit(features, labels)
-print (clf)
+resultLabel = clf.predict([[150, 1], [160, 0], [190, 0]])
+print (resultLabel)
