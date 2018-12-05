@@ -1,5 +1,6 @@
 from sklearn.datasets import load_iris
 import numpy as np
+from sklearn.tree import DecisionTreeClassifier
 
 iris_dataset = load_iris()
 delete_data_idx = [0, 50, 100] #Based on data distribution
@@ -22,3 +23,9 @@ test_target = iris_dataset.target[delete_data_idx]
 print ("test data")
 for i in range(len(test_target)) :
     print ("Count %d : label %s, features %s" % (i, test_target[i], test_data[i]))
+
+clf = DecisionTreeClassifier()
+clf.fit(train_data, train_target)
+clf = clf.predict(test_data)
+
+print (clf)
