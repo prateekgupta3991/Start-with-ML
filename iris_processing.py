@@ -29,3 +29,21 @@ clf.fit(train_data, train_target)
 clf = clf.predict(test_data)
 
 print (clf)
+
+# splitting internal datasets for train and test
+# method 2
+
+from sklearn.cross_validation import train_test_split
+X = iris_dataset.data
+Y = iris_dataset.target
+
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.5)
+m2_split_train = list(zip(X_train, Y_train))
+m2_split_test = list(zip(X_test, Y_test))
+
+print ("train")
+for i in range(len(m2_split_train)) :
+    print ("idx %d value %s" % (i, m2_split_train[i]))
+print ("test")
+for i in range(len(m2_split_test)) :
+    print ("idx %d value %s" % (i, m2_split_test[i]))
